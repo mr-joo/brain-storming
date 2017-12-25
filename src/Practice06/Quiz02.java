@@ -15,6 +15,7 @@ class SutdaCard {
     boolean isKwang;
 
     SutdaCard() {
+        this(1, true);
     }
 
     SutdaCard(int num, boolean isKwang) {
@@ -23,6 +24,6 @@ class SutdaCard {
     }
 
     String info() {
-        return num + "";
+        return num + (isKwang ? "K":"");
     }
 }
