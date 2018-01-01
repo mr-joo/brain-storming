@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <title>Practice</title>
     <style>
-
+        table, th, td{
+        width:20%;
+        border: 1px solid #aaa;
+        border-collapse:collapse;
+        }
+        td:nth-child(2n+1) {
+        text-align:center;
+        background-color: #e3f2fd;
+        }
+        thead{
+        font-weight:bold; color:red;
+        }
     </style>
 </head>
 
@@ -12,7 +23,7 @@
     <form>
         <p>
             닉네임
-            <input type="text" name="name" value="닉네임 입력">
+            <input type="text" name="name">
         </p>
 
         <p>
@@ -49,6 +60,60 @@
             <input type="checkbox" name="path" value="nate">네이트
         </p>
 
+        <p>
+            가입사유
+            <textarea cols="50" rows="3"></textarea>
+        </p>
     </form>
+
+    <p>
+        <img src="/Users/NAVER/Downloads/용량/11.1MB_5107x3360.jpg" width="245"><br>
+        <input type="button" name="upload" value="파일첨부 버튼">
+    </p>
+
+    <table>
+        <thead>
+        <tr>
+            <th colspan="2" >회 원 가 입 약 관</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>첫번째<br> 약관</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+
+            <td>
+                <ul>
+                    <li>두번째</li>
+                    <li>약관</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>
+                <ol>
+                    <li>세번째</li>
+                    <li>약관</li>
+                </ol>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+    <p>
+        <a href="http://www.naver.com">네이버</a>
+        <a href="http://www.daum.net">다음</a>
+        <a href="http://www.nate.com">네이트</a>
+        <input type="button" name="check" value="확인">
+        <input type="button" name="cancel" value="취소">
+    </p>
 </body>
 </html>
