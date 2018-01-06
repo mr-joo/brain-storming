@@ -1,47 +1,62 @@
+let prevNum = 0;
+let currentNum = 0;
+let operator = undefined;
+
 $(document).ready(function () {
-    let num1;
-    let num2;
-    let result;
-    let operator;
+
 
     $("#reset").click(function () {
-        $("#textBox").val(0);
+        $("#display").val(0);
+        prevNum = 0;
+        currentNum = 0;
+        operator = undefined;
     });
 
     $("#alert").click(function () {
-        alert("현재 값 : " + $("#textBox").val());
+        alert("현재 값 : " + $("#display").val());
     });
 
     $("#confirm").click(function () {
         let confirm = prompt("수식을 입력해주세요.", "");
         let input = confirm;
-        let translate = input.replace()
-        $("#textBox").val(translate);
     });
 
     $(".num > input").click(function () {
-        num1 = $(this).val();
-        $("#textBox").val($(this).val());
-        console.log(num1);
+        let new_num = parseInt($(this).val());
+        currentNum = currentNum * 10 + new_num;
+        $("#display").val(currentNum);
     });
 
     $(".calculation > input").click(function () {
-        operator = $(this).val();
-        console.log(operator);
-    })
+    console.log(operator);
+        if (operator != undefined) {
+             switch (operator) {
+             case "+" :
+                      prevNum += currentNum;
+                      break;
 
-    if (operator == "/"){
-        result = num1 / num2;
-    } else if (operator == "*") {
-        result = num1 * num2;
-    } else if (operator == "-") {
-        result = num1 - num2;
-    } else if (operator == "+") {
-        result = num1 + num2;
-    }
+             case "-" :
+                      prevNum -= currentNum;
+                      break;
 
+             case "*" :
+                       prevNum *= currentNum;
+                       break;
 
-    $("#equal").click(function () {
-        $("#textBox").val(result);
-    })
+             case "/" :
+             prevNum /= currentNum;
+             break;
+             }
+            $("#display").val(prevNum);
+        } else {
+            prevNum = currentNum;
+        }
+
+        if ($(this).val() == "=") {
+            operator = undefined;
+        }else {
+            operator = $(this).val();
+        }
+        currentNum = 0;
+    });
 });
