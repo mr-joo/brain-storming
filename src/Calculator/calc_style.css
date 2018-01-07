@@ -4,7 +4,11 @@ body {
     width : 225px;
     padding : 10px;
     border : 5px solid gray;
-    margin : 10;
+    margin : 10px;
+}
+
+#dot {
+    position: absolute; top: 326px; left: 140px;
 }
 .calculation {
     position: absolute; top: 70px; left: 200px;
